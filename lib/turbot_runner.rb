@@ -8,7 +8,7 @@ require 'turbot_runner/validator'
 require 'turbot_runner/version'
 
 module TurbotRunner
-  SCHEMAS_PATH = File.expand_path('../../schema/schemas', __FILE__)
+  SCHEMAS_PATH = File.join(Gem.loaded_specs['openc-schema'].full_gem_path, 'schemas')
 
   def self.schema_path(data_type)
     hyphenated_name = data_type.to_s.gsub("_", "-").gsub(" ", "-")
