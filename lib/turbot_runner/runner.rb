@@ -142,7 +142,7 @@ module TurbotRunner
         :base_directory => @base_directory,
         :file => scraper_script,
         :data_type => scraper_data_type,
-        :identifying_fields => scraper_identifying_fields
+        #:identifying_fields => scraper_identifying_fields
       }
     end
 
@@ -167,7 +167,7 @@ module TurbotRunner
     end
 
     def scraper_identifying_fields
-      @config[:identifying_fields]
+      #@config[:identifying_fields]
     end
 
     def assert_absolute_path(path)

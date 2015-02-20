@@ -11,13 +11,13 @@ module TurbotRunner
       if error.nil?
         flattened_record = TurbotRunner::Utils.flatten(record)
 
-        identifying_attributes = flattened_record.reject do |k, v|
-          !identifying_fields.include?(k) || v.nil? || v == ''
-        end
-
-        if identifying_attributes.empty?
-          message = "There were no values provided for any of the identifying fields: #{identifying_fields.join(', ')}"
-        end
+        # identifying_attributes = flattened_record.reject do |k, v|
+        #   !identifying_fields.include?(k) || v.nil? || v == ''
+        # end
+        #
+        # if identifying_attributes.empty?
+        #   message = "There were no values provided for any of the identifying fields: #{identifying_fields.join(', ')}"
+        # end
       else
         message = case error[:type]
         when :missing

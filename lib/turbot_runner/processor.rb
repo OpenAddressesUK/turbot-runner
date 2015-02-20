@@ -5,7 +5,7 @@ module TurbotRunner
     def initialize(runner, script_config, record_handler)
       @runner = runner
       @data_type = script_config[:data_type]
-      @identifying_fields = script_config[:identifying_fields]
+      #@identifying_fields = script_config[:identifying_fields]
       @record_handler = record_handler
     end
 
@@ -17,7 +17,7 @@ module TurbotRunner
         else
           record = Openc::JsonSchema.convert_dates(schema_path, JSON.parse(line))
 
-          error_message = Validator.validate(@data_type, record, @identifying_fields)
+          error_message = Validator.validate(@data_type, record, nil)
 
           if error_message.nil?
             begin
