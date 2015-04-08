@@ -32,7 +32,8 @@ module TurbotRunner
         end
       rescue JSON::ParserError
         @record_handler.handle_invalid_json(line)
-        @runner.interrupt_and_mark_as_failed if @runner
+        # Don't die if the output is bad JSON, just carry on, log, and swallow it.
+        #@runner.interrupt_and_mark_as_failed if @runner
       end
     end
 
